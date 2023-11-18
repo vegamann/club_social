@@ -1,5 +1,11 @@
-import { SocioEntity } from 'src/socio/socio.entity';
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { SocioEntity } from '../socio/socio.entity';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 @Entity()
 export class ClubEntity {
   @PrimaryGeneratedColumn('uuid')
@@ -14,5 +20,6 @@ export class ClubEntity {
   image: string;
   // eslint-disable-next-line prettier/prettier
   @ManyToMany(() => SocioEntity, socio => socio.clubes)
+  @JoinTable()
   socios: SocioEntity[];
 }
