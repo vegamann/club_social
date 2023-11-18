@@ -10,5 +10,5 @@ export class SocioEntity {
   birthdate: Date;
   // eslint-disable-next-line prettier/prettier
   @ManyToMany(() => ClubEntity, club => club.socios)
-   clubs: ClubEntity[];
+  clubes: ClubEntity[];
 }

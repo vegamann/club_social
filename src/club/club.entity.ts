@@ -13,6 +13,6 @@ export class ClubEntity {
   @Column()
   image: string;
   // eslint-disable-next-line prettier/prettier
-  @ManyToMany(() => SocioEntity, socio => socio.clubs)
+  @ManyToMany(() => SocioEntity, socio => socio.clubes)
   socios: SocioEntity[];
 }
