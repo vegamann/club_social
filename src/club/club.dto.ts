@@ -1,20 +1,18 @@
 /* eslint-disable prettier/prettier */
-import {IsDate, IsNotEmpty, IsString, IsUrl} from 'class-validator';
+import {  IsString, IsUrl, MaxLength} from 'class-validator';
 export class ClubDto {
 
  @IsString()
- @IsNotEmpty()
  readonly name: string;
  
+
  @IsString()
- @IsNotEmpty()
+ @MaxLength(100, { message: 'description should not exceed 100 characters' })
  readonly description: string;
  
- @IsDate()
- @IsNotEmpty()
+ @IsString()
  readonly birthdate:Date
 
  @IsUrl()
- @IsNotEmpty()
  readonly image: string;
 }

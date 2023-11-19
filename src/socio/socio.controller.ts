@@ -16,7 +16,7 @@ import { SocioEntity } from './socio.entity';
 import { SocioDto } from './socio.dto';
 
 @UseInterceptors(BusinessErrorsInterceptor)
-@Controller('socio')
+@Controller('member')
 export class SocioController {
   constructor(private readonly socioservice: SocioService) {}
 
