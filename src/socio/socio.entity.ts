@@ -8,6 +8,8 @@ export class SocioEntity {
   username: string;
   @Column()
   birthdate: Date;
+  @Column()
+  email: string;
   // eslint-disable-next-line prettier/prettier
   @ManyToMany(() => ClubEntity, club => club.socios)
   clubes: ClubEntity[];
