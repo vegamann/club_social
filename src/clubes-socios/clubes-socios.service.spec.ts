@@ -123,11 +123,16 @@ describe('ClubesSociosService', () => {
 
   it('deleteMemberFromClub should remove an socio from a club', async () => {
     const socio: SocioEntity = socioList[0];
-   
+
     await service.deleteMemberFromClub(club.id, socio.id);
- 
-    const storedClub: ClubEntity = await clubRepository.findOne({where: {id: club.id}, relations: ["socios"]});
-    const deletedSocio: SocioEntity = storedClub.socios.find(a => a.id === socio.id);
+
+    const storedClub: ClubEntity = await clubRepository.findOne({
+      where: { id: club.id },
+      relations: ['socios'],
+    });
+    const deletedSocio: SocioEntity = storedClub.socios.find(
+      (a) => a.id === socio.id,
+    );
  
     expect(deletedSocio).toBeUndefined();
  
