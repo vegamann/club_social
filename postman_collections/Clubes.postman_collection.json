@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "27be9716-7091-44d7-9d7a-6f0d4b9c9f15",
+		"name": "Clubes",
+		"description": "Documentation for the API used as an example in the MISW4403 MISO Course.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20517021",
+		"_collection_link": "https://gold-satellite-949014.postman.co/workspace/devops~07487534-c0c7-4099-8bb0-d583f70a44c0/collection/20517021-27be9716-7091-44d7-9d7a-6f0d4b9c9f15?action=share&source=collection_link&creator=20517021"
+	},
+	"item": [
+		{
+			"name": "Add a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"club_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"El club virrey\",\n    \"description\": \"un gran club\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\":\"http://loremflickr.com/640/480\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs"
+					]
+				},
+				"description": "This request creates a new producto. The API returns the created resource with the assigned ID."
+			},
+			"response": [
+				{
+					"name": "Add a club",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"El club virrey\",\n    \"description\": \"un gran club\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\":\"http://loremflickr.com/640/480\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Add a club invalid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"producto_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"El club virrey\",\n    \"description\": \"La idea de grabar una versión de «Fever» surgió de manera imprevista en agosto de 1992, cuando ambos estaban trabajando en un tema llamado «Goodbye to Innocence» durante la etapa de mezcla de la producción. Debido a que Madonna no se sentía conforme con la canción, Pettibone añadió una nueva línea de bajo y se dispusieron a intentar terminarla; no obstante, en el momento en que se colocó los auriculares para grabar la voz sobre la pista musical, en lugar de cantar la letra de «Goodbye to Innocence», empezó a improvisar y entonó algunos fragmentos de «Fever». Al principio, la cantante había tomado la improvisación como una broma, pero finalmente decidieron grabar la versión completa después de que Pettibone y su asistente Anothony Shimkin quedaran complacidos con el sonido. De esta manera, «Fever» fue la última canción que se grabó para Erotica.La versión de Madonna pertenece a los géneros house, techno y disco y la producción se destaca por incorporar percusiones y ritmos big beat y post-disco, así como voces susurradas en un estilo de pseudorap. La letra trata sobre el deseo y el «candor sexual» y Madonna recita versos adicionales sobre Pocahontas que habían sido compuestos por Lee cuando grabó su versión. Las compañías Sire, Maverick y Warner Bros. Records publicaron «Fever» en marzo de 1993 como el cuarto sencillo de Erotica. En los Estados Unidos, fue promocionado en las principales discotecas en un vinilo de 12, pero no tuvo un lanzamiento físico; en su lugar, figuró en el lado B de su predecesor, «Bad Girl». En el resto de los mercados, salió a la venta de manera comercial en casete, CD y vinilo de 7. El lanzamiento estuvo acompañado de varias remezclas a cargo de Pettibone, el dúo de Miami Murk Boys —integrado por Oscar Gaetan y Ralph Falcon— y el DJ Daniel Abraham, cuya versión es la que se utilizó para el videoclip.\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\":\"http://loremflickr.com/640/480\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs"
+					]
+				},
+				"description": "This request creates a new producto. The API returns the created resource with the assigned ID."
+			},
+			"response": [
+				{
+					"name": "Add a club invalid",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"El club virrey\",\n    \"description\": \"La idea de grabar una versión de «Fever» surgió de manera imprevista en agosto de 1992, cuando ambos estaban trabajando en un tema llamado «Goodbye to Innocence» durante la etapa de mezcla de la producción. Debido a que Madonna no se sentía conforme con la canción, Pettibone añadió una nueva línea de bajo y se dispusieron a intentar terminarla; no obstante, en el momento en que se colocó los auriculares para grabar la voz sobre la pista musical, en lugar de cantar la letra de «Goodbye to Innocence», empezó a improvisar y entonó algunos fragmentos de «Fever». Al principio, la cantante había tomado la improvisación como una broma, pero finalmente decidieron grabar la versión completa después de que Pettibone y su asistente Anothony Shimkin quedaran complacidos con el sonido. De esta manera, «Fever» fue la última canción que se grabó para Erotica.La versión de Madonna pertenece a los géneros house, techno y disco y la producción se destaca por incorporar percusiones y ritmos big beat y post-disco, así como voces susurradas en un estilo de pseudorap. La letra trata sobre el deseo y el «candor sexual» y Madonna recita versos adicionales sobre Pocahontas que habían sido compuestos por Lee cuando grabó su versión. Las compañías Sire, Maverick y Warner Bros. Records publicaron «Fever» en marzo de 1993 como el cuarto sencillo de Erotica. En los Estados Unidos, fue promocionado en las principales discotecas en un vinilo de 12, pero no tuvo un lanzamiento físico; en su lugar, figuró en el lado B de su predecesor, «Bad Girl». En el resto de los mercados, salió a la venta de manera comercial en casete, CD y vinilo de 7. El lanzamiento estuvo acompañado de varias remezclas a cargo de Pettibone, el dúo de Miami Murk Boys —integrado por Oscar Gaetan y Ralph Falcon— y el DJ Daniel Abraham, cuya versión es la que se utilizó para el videoclip.\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\":\"http://loremflickr.com/640/480\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get all clubes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of productos > ' + 0, function () {",
+							"    var data = pm.response.json()",
+							"    pm.expect(data.length).to.greaterThan(0)",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all clubes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get one club by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get one club by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get an invalid id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"No se encuentra ningún producto con este id\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get an invalid id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Update a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"se cambió el nombre\",\n    \"description\": \"un gran club\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\": \"http://loremflickr.com/640/480\",\n    \"id\": \"3897d818-44d1-479b-83c2-d955b514c705\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update a club",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"se cambió el nombre\",\n    \"description\": \"un gran club\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\": \"http://loremflickr.com/640/480\",\n    \"id\": \"3897d818-44d1-479b-83c2-d955b514c705\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Update an invalid club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"No se encuentra ningún producto con este id\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"se cambió el nombre\",\n    \"description\": \"un gran club\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\": \"http://loremflickr.com/640/480\",\n    \"id\": \"3897d818-44d1-479b-83c2-d955b514c705\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an invalid club",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"se cambió el nombre\",\n    \"description\": \"un gran club\",\n    \"birthdate\": \"2000-01-01\",\n    \"image\": \"http://loremflickr.com/640/480\",\n    \"id\": \"3897d818-44d1-479b-83c2-d955b514c705\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a club",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"No se encuentra ningún producto con este id\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an invalid club",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3001/api/v1",
+			"type": "string"
+		}
+	]
+}
